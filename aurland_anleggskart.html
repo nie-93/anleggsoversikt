@@ -18,6 +18,10 @@
   .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
   .popup-title { font-weight: 600; font-size: 13px; margin: 0 0 4px; }
   .popup-row { font-size: 12px; color: #555; margin: 0; }
+  .hover-card { text-align: center; }
+  .hover-card img { max-width: 180px; max-height: 130px; border-radius: 6px; display: block; }
+  .hover-title { font-size: 12px; font-weight: 600; margin: 4px 0 0; }
+  .leaflet-tooltip { background: #fff; border: 1px solid #ddd; padding: 6px; }
   #export { padding: 10px 20px; background: #fff; border-top: 1px solid #eee; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
   #export button { font-size: 13px; padding: 6px 12px; border: 1px solid #ccc; border-radius: 6px; background: #fff; cursor: pointer; }
   #export button:hover { background: #f0f0f0; }
@@ -86,10 +90,19 @@ function colorFor(status) {
 }
 
 const map = L.map('map').setView([60.89, 7.05], 10);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+const kartLag = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap-bidragsytarar',
-  maxZoom: 18
-}).addTo(map);
+  maxZoom: 19
+});
+
+const flyfotoLag = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Esri, Maxar, Earthstar Geographics',
+  maxZoom: 19
+});
+
+kartLag.addTo(map);
+L.control.layers({ "Kart": kartLag, "Flyfoto": flyfotoLag }).addTo(map);
 
 const markers = [];
 const filterKlasse = document.getElementById('filterKlasse');
@@ -128,6 +141,15 @@ function buildMarkers() {
       `<p class="popup-row">Eier: ${a.Eier || "ukjent"}</p>` +
       (a.Kommentar ? `<p class="popup-row" style="margin-top:6px; font-style:italic;">${a.Kommentar}</p>` : "")
     );
+    if (a.Bilde) {
+      marker.bindTooltip(
+        `<div class="hover-card">
+           <img src="${a.Bilde}" alt="${a.Navn}" onerror="this.parentElement.style.display='none'">
+           <p class="hover-title">${a.Navn}</p>
+         </div>`,
+        { direction: "top", offset: [0, -10], opacity: 1, sticky: false }
+      );
+    }
     markers.push({ marker, klasse: a.Anleggsklasse || "Planlagt", status });
   });
   applyFilters();
@@ -153,7 +175,7 @@ document.getElementById('filterStatus').addEventListener('change', applyFilters)
 refreshAll();
 
 function exportCSV() {
-  const headers = ["Navn","Anleggsklasse","Anleggskategori","Anleggstype","Byggeår","Siste ombyggingsår","Breddegrad","Lengdegrad","Eier","Drifter","Planlagt","Kommentar"];
+  const headers = ["Navn","Anleggsklasse","Anleggskategori","Anleggstype","Byggeår","Siste ombyggingsår","Breddegrad","Lengdegrad","Eier","Drifter","Planlagt","Kommentar","Bilde"];
   const rows = currentData.map(a => headers.map(h => `"${(a[h] ?? "").toString().replace(/"/g,'""')}"`).join(","));
   const csv = [headers.join(","), ...rows].join("\n");
   const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });

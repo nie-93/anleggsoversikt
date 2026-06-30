@@ -13,7 +13,8 @@ const anleggData = [
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Aurland_kommune.png"
   },
   {
     "Navn": "Aurland barne- og ungdomsskule aktivitetspark",
@@ -27,7 +28,8 @@ const anleggData = [
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Aurland idretts og samfunnshus",
@@ -41,7 +43,8 @@ const anleggData = [
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Aurland idretts og samfunnshus - svømmehallen",
@@ -55,7 +58,8 @@ const anleggData = [
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": "https://www.kleivensogn.no/wp-content/uploads/2023/03/bad2-1030x579.jpg"
   },
   {
     "Navn": "Aurland stadion - Aurlandshallen",
@@ -69,7 +73,8 @@ const anleggData = [
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Aurland stadion - idrettshus",
@@ -83,7 +88,8 @@ const anleggData = [
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND IDRETTSLAG",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Aurland stadion - kunstgras",
@@ -92,26 +98,28 @@ const anleggData = [
     "Anleggstype": "Fotballbane kunstgress",
     "Byggeår": 1985,
     "Siste ombyggingsår": 2025,
-    "Lengdegrad": 7.19564037154941,
-    "Breddegrad": 60.9039509196635,
+    "Lengdegrad": 7.20043442273775,
+    "Breddegrad": 60.9025250519373,
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Aurland stadion Sykkelbane",
     "Anleggsklasse": "Ordinært anlegg",
     "Anleggskategori": "Sykkelanlegg",
-    "Anleggstype": "Pumptrack",
-    "Byggeår": 2026,
-    "Siste ombyggingsår": null,
+    "Anleggstype": "BMX-bane",
+    "Byggeår": 2005,
+    "Siste ombyggingsår": 2026,
     "Lengdegrad": 7.195194,
-    "Breddegrad": 60.9025026321992,
+    "Breddegrad": 60.902482,
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Aurland stadion-friidrettsbane",
@@ -120,12 +128,13 @@ const anleggData = [
     "Anleggstype": "Friidrettsstadion kunststoff",
     "Byggeår": 1986,
     "Siste ombyggingsår": 1952,
-    "Lengdegrad": 7.19561897426564,
+    "Lengdegrad": 7.196228,
     "Breddegrad": 60.90343,
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Aurlandsdalen turisthytte Østerbø gnr 24 bnr 21",
@@ -139,7 +148,8 @@ const anleggData = [
     "Eier": "DEN NORSKE TURISTFORENING OSLO OG OMEGN",
     "Drifter": "DEN NORSKE TURISTFORENING OSLO OG OMEGN",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Aurlandshallen, innandørs skytebane",
@@ -153,7 +163,8 @@ const anleggData = [
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND SKYTTARLAG",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Aurlandshallen, klatrevegg",
@@ -167,7 +178,8 @@ const anleggData = [
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Ball og klatrevegg ABU",
@@ -181,7 +193,8 @@ const anleggData = [
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Brekkefossen tursti",
@@ -195,7 +208,8 @@ const anleggData = [
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Flåm samfunnshus",
@@ -209,7 +223,8 @@ const anleggData = [
     "Eier": "Flåm Samfunnshus",
     "Drifter": "Flåm Samfunnshus",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Flåm stadion - fotballbane",
@@ -223,7 +238,8 @@ const anleggData = [
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Kongshelleren",
@@ -237,7 +253,8 @@ const anleggData = [
     "Eier": "DEN NORSKE TURISTFORENING OSLO OG OMEGN",
     "Drifter": "AURLAND FJELLSTYRE",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Leikvollen nærmiljøanlegg",
@@ -251,7 +268,8 @@ const anleggData = [
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "VASSBYGDI UNGDOMSLAG",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Lovi skytebane , 200 m",
@@ -265,7 +283,8 @@ const anleggData = [
     "Eier": "AURLAND SKYTTARLAG",
     "Drifter": "AURLAND SKYTTARLAG",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Lovi skytebane, 100m og 300m",
@@ -279,7 +298,8 @@ const anleggData = [
     "Eier": "AURLAND SKYTTARLAG",
     "Drifter": "AURLAND SKYTTARLAG",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Lovi skytebane, skyttarhus",
@@ -293,7 +313,8 @@ const anleggData = [
     "Eier": "AURLAND SKYTTARLAG",
     "Drifter": "AURLAND SKYTTARLAG",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Rallarvegen - turveg",
@@ -307,7 +328,8 @@ const anleggData = [
     "Eier": "NSB EIENDOM AS",
     "Drifter": "NSB EIENDOM AS",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Skjerping ballbinge",
@@ -321,7 +343,8 @@ const anleggData = [
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "NÆRØY VEL",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Stemmerdalen turveg for rullestolbrukarar",
@@ -335,7 +358,8 @@ const anleggData = [
     "Eier": "AURLAND FJELLSTYRE",
     "Drifter": "AURLAND FJELLSTYRE",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Stemmerdalen-Østerbø",
@@ -349,7 +373,8 @@ const anleggData = [
     "Eier": "DEN NORSKE TURISTFORENING",
     "Drifter": "DEN NORSKE TURISTFORENING",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Trudvang ungdomshus",
@@ -363,7 +388,8 @@ const anleggData = [
     "Eier": "Aurland Ungdomshus",
     "Drifter": "Aurland Ungdomshus",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Tusenårsstaden på Rygg - leikeplass",
@@ -377,7 +403,8 @@ const anleggData = [
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Undredal sentrum - Stokko",
@@ -391,7 +418,8 @@ const anleggData = [
     "Eier": "UNDREDAL GRENDALAG",
     "Drifter": "UNDREDAL GRENDALAG",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Undredal ungdomshus",
@@ -405,7 +433,8 @@ const anleggData = [
     "Eier": "UNDREDAL UNGDOMSLAG",
     "Drifter": "UNDREDAL UNGDOMSLAG",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": "Vinjaåsen Dagsturhytte",
@@ -419,35 +448,38 @@ const anleggData = [
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
-    "Navn": "Tilbygg flerbrukssal Aurlandshallen",
-    "Anleggsklasse": "Ordinært anlegg",
-    "Anleggskategori": "Idrettshaller og aktivitetssaler",
-    "Anleggstype": "Flerbrukssal",
+    "Navn": "Ordinært anlegg",
+    "Anleggsklasse": NaN,
+    "Anleggskategori": NaN,
+    "Anleggstype": NaN,
     "Byggeår": null,
-    "Siste ombyggingsår": null,
-    "Lengdegrad": 7.194633,
-    "Breddegrad": 60.902286,
-    "Eier": "AURLAND KOMMUNE",
-    "Drifter": "AURLAND KOMMUNE",
-    "Planlagt": true,
-    "Kommentar": ""
-  },
-  {
-    "Navn": "Aktivitetspark Fretheimshaugane",
-    "Anleggsklasse": "Nærmiljøanlegg",
-    "Anleggskategori": "Mindre utendørsanlegg",
-    "Anleggstype": "Flerbruksområde (ute)",
-    "Byggeår": null,
-    "Siste ombyggingsår": null,
+    "Siste ombyggingsår": "ja",
     "Lengdegrad": null,
-    "Breddegrad": null,
-    "Eier": "AURLAND KOMMUNE",
-    "Drifter": "AURLAND KOMMUNE",
+    "Breddegrad": 60.902286,
+    "Eier": NaN,
+    "Drifter": 7.194633,
     "Planlagt": true,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
+  },
+  {
+    "Navn": "Nærmiljøanlegg",
+    "Anleggsklasse": NaN,
+    "Anleggskategori": NaN,
+    "Anleggstype": NaN,
+    "Byggeår": null,
+    "Siste ombyggingsår": "ja",
+    "Lengdegrad": null,
+    "Breddegrad": 60.8625,
+    "Eier": NaN,
+    "Drifter": NaN,
+    "Planlagt": true,
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
     "Navn": NaN,
@@ -457,108 +489,116 @@ const anleggData = [
     "Byggeår": null,
     "Siste ombyggingsår": null,
     "Lengdegrad": null,
-    "Breddegrad": null,
+    "Breddegrad": 60.9035,
     "Eier": NaN,
     "Drifter": NaN,
-    "Planlagt": false,
-    "Kommentar": ""
-  },
-  {
-    "Navn": "Grussti Turli-jordbruksskolen",
-    "Anleggsklasse": "Friluftsanlegg",
-    "Anleggskategori": "Friluftslivsanlegg",
-    "Anleggstype": "Grussti",
-    "Byggeår": null,
-    "Siste ombyggingsår": null,
-    "Lengdegrad": 7.21925712113263,
-    "Breddegrad": 60.8985022453905,
-    "Eier": "AURLAND KOMMUNE",
-    "Drifter": "AURLAND KOMMUNE",
     "Planlagt": true,
-    "Kommentar": ""
+    "Kommentar": "",
+    "Bilde": ""
   },
   {
-    "Navn": "Badelaguna",
-    "Anleggsklasse": "Nærmiljøanlegg",
-    "Anleggskategori": "Utendørsanlegg",
-    "Anleggstype": "Badaplass",
-    "Byggeår": null,
-    "Siste ombyggingsår": null,
-    "Lengdegrad": 7.18880071366129,
-    "Breddegrad": 60.908932359805,
-    "Eier": "AURLAND KOMMUNE",
-    "Drifter": "AURLAND KOMMUNE",
-    "Planlagt": false,
-    "Kommentar": ""
-  },
-  {
-    "Navn": "Grusstak med fotballmål",
-    "Anleggsklasse": NaN,
-    "Anleggskategori": "Fotballanlegg",
-    "Anleggstype": "Grusstak med fotballmål",
-    "Byggeår": null,
-    "Siste ombyggingsår": null,
-    "Lengdegrad": 7.19065325855513,
-    "Breddegrad": 60.9105191734429,
-    "Eier": NaN,
-    "Drifter": NaN,
-    "Planlagt": false,
-    "Kommentar": "Ikke tegn på nevneverdig bruk, Kandidat for ombygging"
-  },
-  {
-    "Navn": "Lekeanlegg",
-    "Anleggsklasse": "Nærmiljøanlegg",
-    "Anleggskategori": "Lekeanlegg",
-    "Anleggstype": "Lekeanlegg",
-    "Byggeår": null,
-    "Siste ombyggingsår": null,
-    "Lengdegrad": 7.19396673808925,
-    "Breddegrad": 60.915631174442,
-    "Eier": NaN,
-    "Drifter": NaN,
-    "Planlagt": false,
-    "Kommentar": "Lekeplass, ny type kompan"
-  },
-  {
-    "Navn": "Lekeanlegg",
-    "Anleggsklasse": NaN,
-    "Anleggskategori": "Lekeanlegg",
-    "Anleggstype": "Lekeanlegg",
-    "Byggeår": null,
-    "Siste ombyggingsår": null,
-    "Lengdegrad": 7.19705847355822,
-    "Breddegrad": 60.9222677710818,
-    "Eier": NaN,
-    "Drifter": NaN,
-    "Planlagt": false,
-    "Kommentar": "Lekeplass, ny type kompan"
-  },
-  {
-    "Navn": "Grusstak med fotballmål",
-    "Anleggsklasse": NaN,
-    "Anleggskategori": "Fotballanlegg",
-    "Anleggstype": "Grusstak med fotballmål",
-    "Byggeår": null,
-    "Siste ombyggingsår": null,
-    "Lengdegrad": 7.19775993446172,
-    "Breddegrad": 60.9245961799982,
-    "Eier": NaN,
-    "Drifter": NaN,
-    "Planlagt": false,
-    "Kommentar": "Kandidat for ombygging"
-  },
-  {
-    "Navn": "Lekeanlegg",
+    "Navn": "Friluftsanlegg",
     "Anleggsklasse": NaN,
     "Anleggskategori": NaN,
     "Anleggstype": NaN,
     "Byggeår": null,
-    "Siste ombyggingsår": null,
-    "Lengdegrad": 7.19667155891654,
-    "Breddegrad": 60.9274741454049,
+    "Siste ombyggingsår": "ja",
+    "Lengdegrad": null,
+    "Breddegrad": 60.9015,
     "Eier": NaN,
-    "Drifter": NaN,
+    "Drifter": 7.21925712113263,
+    "Planlagt": true,
+    "Kommentar": "",
+    "Bilde": ""
+  },
+  {
+    "Navn": "Nærmiljøanlegg",
+    "Anleggsklasse": "Aurland",
+    "Anleggskategori": "Vestland",
+    "Anleggstype": NaN,
+    "Byggeår": null,
+    "Siste ombyggingsår": null,
+    "Lengdegrad": null,
+    "Breddegrad": null,
+    "Eier": NaN,
+    "Drifter": 7.18880071366129,
     "Planlagt": false,
-    "Kommentar": "Lekeplass, ny type kompan, visuelt lite attraktivt, Kunne en gjort noe med dekket her?"
+    "Kommentar": "",
+    "Bilde": ""
+  },
+  {
+    "Navn": NaN,
+    "Anleggsklasse": "Aurland",
+    "Anleggskategori": "Vestland",
+    "Anleggstype": NaN,
+    "Byggeår": null,
+    "Siste ombyggingsår": "nei",
+    "Lengdegrad": "Ikke tegn på nevneverdig bruk, Kandidat for ombygging",
+    "Breddegrad": null,
+    "Eier": NaN,
+    "Drifter": 7.19065325855513,
+    "Planlagt": false,
+    "Kommentar": "",
+    "Bilde": ""
+  },
+  {
+    "Navn": "Nærmiljøanlegg",
+    "Anleggsklasse": "Aurland",
+    "Anleggskategori": "Vestland",
+    "Anleggstype": NaN,
+    "Byggeår": null,
+    "Siste ombyggingsår": "nei",
+    "Lengdegrad": "Lekeplass, ny type kompan",
+    "Breddegrad": null,
+    "Eier": NaN,
+    "Drifter": 7.19396673808925,
+    "Planlagt": false,
+    "Kommentar": "",
+    "Bilde": ""
+  },
+  {
+    "Navn": NaN,
+    "Anleggsklasse": "Aurland",
+    "Anleggskategori": "Vestland",
+    "Anleggstype": NaN,
+    "Byggeår": null,
+    "Siste ombyggingsår": null,
+    "Lengdegrad": "Lekeplass, ny type kompan",
+    "Breddegrad": null,
+    "Eier": NaN,
+    "Drifter": 7.19705847355822,
+    "Planlagt": false,
+    "Kommentar": "",
+    "Bilde": ""
+  },
+  {
+    "Navn": NaN,
+    "Anleggsklasse": "Aurland",
+    "Anleggskategori": "Vestland",
+    "Anleggstype": NaN,
+    "Byggeår": null,
+    "Siste ombyggingsår": "nei",
+    "Lengdegrad": "Kandidat for ombygging",
+    "Breddegrad": null,
+    "Eier": NaN,
+    "Drifter": 7.19775993446172,
+    "Planlagt": false,
+    "Kommentar": "",
+    "Bilde": ""
+  },
+  {
+    "Navn": NaN,
+    "Anleggsklasse": "Aurland",
+    "Anleggskategori": "Vestland",
+    "Anleggstype": NaN,
+    "Byggeår": null,
+    "Siste ombyggingsår": "nei",
+    "Lengdegrad": "Lekeplass, ny type kompan, visuelt lite attraktivt, Kunne en gjort noe med dekket her?",
+    "Breddegrad": null,
+    "Eier": NaN,
+    "Drifter": 7.19667155891654,
+    "Planlagt": false,
+    "Kommentar": "",
+    "Bilde": ""
   }
 ];
