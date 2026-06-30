@@ -125,7 +125,8 @@ function buildMarkers() {
       `<div class="popup-title">${a.Navn}</div>` +
       `<p class="popup-row">${a.Anleggskategori || ""}${a.Anleggstype ? " - " + a.Anleggstype : ""}</p>` +
       `<p class="popup-row">${aarTekst}</p>` +
-      `<p class="popup-row">Eier: ${a.Eier || "ukjent"}</p>`
+      `<p class="popup-row">Eier: ${a.Eier || "ukjent"}</p>` +
+      (a.Kommentar ? `<p class="popup-row" style="margin-top:6px; font-style:italic;">${a.Kommentar}</p>` : "")
     );
     markers.push({ marker, klasse: a.Anleggsklasse || "Planlagt", status });
   });
@@ -152,7 +153,7 @@ document.getElementById('filterStatus').addEventListener('change', applyFilters)
 refreshAll();
 
 function exportCSV() {
-  const headers = ["Navn","Anleggsklasse","Anleggskategori","Anleggstype","Byggeår","Siste ombyggingsår","Breddegrad","Lengdegrad","Eier","Drifter","Planlagt"];
+  const headers = ["Navn","Anleggsklasse","Anleggskategori","Anleggstype","Byggeår","Siste ombyggingsår","Breddegrad","Lengdegrad","Eier","Drifter","Planlagt","Kommentar"];
   const rows = currentData.map(a => headers.map(h => `"${(a[h] ?? "").toString().replace(/"/g,'""')}"`).join(","));
   const csv = [headers.join(","), ...rows].join("\n");
   const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
