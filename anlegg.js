@@ -602,18 +602,33 @@ const anleggData = [
     "Bilde": ""
   },
   {
-    "Navn": NaN,
-    "Anleggsklasse": NaN,
-    "Anleggskategori": NaN,
+    "Navn": "Lekeanlegg Flåm barnehage",
+    "Anleggsklasse": "Barnehage",
+    "Anleggskategori": "Lekeanlegg i tilknyttning barnehage",
     "Anleggstype": NaN,
     "Byggeår": null,
     "Siste ombyggingsår": null,
-    "Lengdegrad": null,
-    "Breddegrad": null,
+    "Lengdegrad": 7.11108534668775,
+    "Breddegrad": 60.8526648279872,
     "Eier": NaN,
     "Drifter": NaN,
     "Planlagt": false,
-    "Kommentar": "",
-    "Bilde": ""
+    "Kommentar": "mye brukt etter stengning, her kan det bli behov for et nytt lekeareal ved nedlegging",
+    "Bilde": "bilder/flam_Barnehage.jpg"
+  },
+  {
+    "Navn": "Lekeanlegg",
+    "Anleggsklasse": "Barnehage",
+    "Anleggskategori": "Lekeanlegg i tilknyttning barnehage",
+    "Anleggstype": NaN,
+    "Byggeår": null,
+    "Siste ombyggingsår": null,
+    "Lengdegrad": 7.11108534668775,
+    "Breddegrad": 60.8526648279872,
+    "Eier": NaN,
+    "Drifter": NaN,
+    "Planlagt": true,
+    "Kommentar": "Deler av arealet",
+    "Bilde": "bilder/flam_Barnehage.jpg"
   }
 ];
