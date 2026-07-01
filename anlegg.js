@@ -14,7 +14,8 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/abu.jpg"
+    "Bilde": "bilder/abu.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Aurland barne- og ungdomsskule aktivitetspark",
@@ -29,7 +30,8 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/abu.jpg"
+    "Bilde": "bilder/abu.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Aurland idretts og samfunnshus",
@@ -44,7 +46,8 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/AIS.jpg"
+    "Bilde": "bilder/AIS.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Aurland idretts og samfunnshus - svømmehallen",
@@ -59,7 +62,8 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "",
+    "Radius (m)": null
   },
   {
     "Navn": "Aurland stadion - Aurlandshallen",
@@ -74,7 +78,8 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/aurlandshallen.jpg"
+    "Bilde": "bilder/aurlandshallen.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Aurland stadion - idrettshus",
@@ -89,7 +94,8 @@ const anleggData = [
     "Drifter": "AURLAND IDRETTSLAG",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/idrett.jpg"
+    "Bilde": "bilder/idrett.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Aurland stadion - kunstgras",
@@ -104,7 +110,8 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "",
+    "Radius (m)": null
   },
   {
     "Navn": "Aurland stadion Sykkelbane",
@@ -119,7 +126,8 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/pumptrack.jpg"
+    "Bilde": "bilder/pumptrack.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Aurland stadion-friidrettsbane",
@@ -134,7 +142,8 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/lopebane.jpg"
+    "Bilde": "bilder/lopebane.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Aurlandsdalen turisthytte Østerbø gnr 24 bnr 21",
@@ -149,7 +158,8 @@ const anleggData = [
     "Drifter": "DEN NORSKE TURISTFORENING OSLO OG OMEGN",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/ostebo.jpg"
+    "Bilde": "bilder/ostebo.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Aurlandshallen, innandørs skytebane",
@@ -164,7 +174,8 @@ const anleggData = [
     "Drifter": "AURLAND SKYTTARLAG",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/lovi.jpg"
+    "Bilde": "bilder/lovi.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Aurlandshallen, klatrevegg",
@@ -179,7 +190,8 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/klatrevegg.jpg"
+    "Bilde": "bilder/klatrevegg.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Ball og klatrevegg ABU",
@@ -194,7 +206,8 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "",
+    "Radius (m)": null
   },
   {
     "Navn": "Brekkefossen tursti",
@@ -209,7 +222,8 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/brekkefossen.jpg"
+    "Bilde": "bilder/brekkefossen.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Flåm samfunnshus",
@@ -224,7 +238,8 @@ const anleggData = [
     "Drifter": "Flåm Samfunnshus",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/flam_Samf.jpg"
+    "Bilde": "bilder/flam_Samf.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Flåm strandvolleyball",
@@ -239,7 +254,8 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "Fin standard",
-    "Bilde": "bilder/volleyball.jpg"
+    "Bilde": "bilder/volleyball.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Kongshelleren",
@@ -254,7 +270,8 @@ const anleggData = [
     "Drifter": "AURLAND FJELLSTYRE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/kongshelleren.jpg"
+    "Bilde": "bilder/kongshelleren.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Leikvollen nærmiljøanlegg",
@@ -269,7 +286,8 @@ const anleggData = [
     "Drifter": "VASSBYGDI UNGDOMSLAG",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "",
+    "Radius (m)": null
   },
   {
     "Navn": "Lovi skytebane , 200 m",
@@ -284,7 +302,8 @@ const anleggData = [
     "Drifter": "AURLAND SKYTTARLAG",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/lovi.jpg"
+    "Bilde": "bilder/lovi.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Lovi skytebane, 100m og 300m",
@@ -299,7 +318,8 @@ const anleggData = [
     "Drifter": "AURLAND SKYTTARLAG",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/lovi.jpg"
+    "Bilde": "bilder/lovi.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Lovi skytebane, skyttarhus",
@@ -314,7 +334,8 @@ const anleggData = [
     "Drifter": "AURLAND SKYTTARLAG",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/lovi.jpg"
+    "Bilde": "bilder/lovi.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Rallarvegen - turveg",
@@ -329,7 +350,8 @@ const anleggData = [
     "Drifter": "NSB EIENDOM AS",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "",
+    "Radius (m)": null
   },
   {
     "Navn": "Skjerping ballbinge",
@@ -344,7 +366,8 @@ const anleggData = [
     "Drifter": "NÆRØY VEL",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "",
+    "Radius (m)": null
   },
   {
     "Navn": "Stemmerdalen turveg for rullestolbrukarar",
@@ -359,7 +382,8 @@ const anleggData = [
     "Drifter": "AURLAND FJELLSTYRE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "",
+    "Radius (m)": null
   },
   {
     "Navn": "Stemmerdalen-Østerbø",
@@ -374,7 +398,8 @@ const anleggData = [
     "Drifter": "DEN NORSKE TURISTFORENING",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "",
+    "Radius (m)": null
   },
   {
     "Navn": "Trudvang ungdomshus",
@@ -389,7 +414,8 @@ const anleggData = [
     "Drifter": "Aurland Ungdomshus",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/kino.jpg"
+    "Bilde": "bilder/kino.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Tusenårsstaden på Rygg - leikeplass",
@@ -404,7 +430,8 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "",
+    "Radius (m)": null
   },
   {
     "Navn": "Undredal sentrum - Stokko",
@@ -419,7 +446,8 @@ const anleggData = [
     "Drifter": "UNDREDAL GRENDALAG",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "",
+    "Radius (m)": null
   },
   {
     "Navn": "Undredal ungdomshus",
@@ -434,7 +462,8 @@ const anleggData = [
     "Drifter": "UNDREDAL UNGDOMSLAG",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "",
+    "Radius (m)": null
   },
   {
     "Navn": "Vinjaåsen Dagsturhytte",
@@ -449,7 +478,8 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/dagsturhytta.jpg"
+    "Bilde": "bilder/dagsturhytta.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Paddlebane",
@@ -464,7 +494,8 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": true,
     "Kommentar": "Tenkt bygget med volleyballbaner",
-    "Bilde": ""
+    "Bilde": "",
+    "Radius (m)": null
   },
   {
     "Navn": "Tursti SJBS -> Turlielva",
@@ -479,7 +510,8 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": true,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "",
+    "Radius (m)": null
   },
   {
     "Navn": "Badelaguna",
@@ -494,7 +526,8 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/badelagune.jpg"
+    "Bilde": "bilder/badelagune.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Grusstak Høydalen",
@@ -509,7 +542,8 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "Kandidat for ombygging",
-    "Bilde": "bilder/Grusstak_Hoydalen.jpg"
+    "Bilde": "bilder/Grusstak_Hoydalen.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Lekeanlegg TY",
@@ -524,7 +558,8 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "Lekeplass, ny type kompan",
-    "Bilde": "bilder/lekeplass_Ty.jpg"
+    "Bilde": "bilder/lekeplass_Ty.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Lekeanlegg Fiskhammar",
@@ -539,7 +574,8 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "Lekeplass, ny type kompan",
-    "Bilde": "bilder/lekeplass_Fiskehammar.jpg"
+    "Bilde": "bilder/lekeplass_Fiskehammar.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Grusstak Vetleli",
@@ -554,7 +590,8 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "Kandidat for ombygging",
-    "Bilde": "bilder/grustak_V_HT.jpg"
+    "Bilde": "bilder/grustak_V_HT.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Lekeanlegg Ystebøen",
@@ -569,7 +606,8 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "",
+    "Radius (m)": null
   },
   {
     "Navn": "Haralds Plass",
@@ -584,7 +622,8 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "mye bruk",
-    "Bilde": "bilder/haraldsPlass.jpg"
+    "Bilde": "bilder/haraldsPlass.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Lekeanlegg Flåm sentrum",
@@ -599,7 +638,8 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "",
+    "Radius (m)": null
   },
   {
     "Navn": "Lekeanlegg Flåm barnehage",
@@ -614,7 +654,8 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "mye brukt etter stengning, her kan det bli behov for et nytt lekeareal ved nedlegging",
-    "Bilde": "bilder/flam_Barnehage.jpg"
+    "Bilde": "bilder/flam_Barnehage.jpg",
+    "Radius (m)": null
   },
   {
     "Navn": "Lekeanlegg",
@@ -629,6 +670,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": true,
     "Kommentar": "Deler av arealet",
-    "Bilde": "bilder/flam_Barnehage.jpg"
+    "Bilde": "bilder/flam_Barnehage.jpg",
+    "Radius (m)": null
   }
 ];
