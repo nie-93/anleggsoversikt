@@ -59,7 +59,7 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "https://www,kleivensogn,no/wp-content/uploads/2023/03/bad2-1030x579,jpg"
+    "Bilde": ""
   },
   {
     "Navn": "Aurland stadion - Aurlandshallen",
@@ -74,7 +74,7 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/aurlandshallen.jpg"
   },
   {
     "Navn": "Aurland stadion - idrettshus",
@@ -104,7 +104,7 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/lopebane.jpg"
   },
   {
     "Navn": "Aurland stadion Sykkelbane",
@@ -119,7 +119,7 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/pumptrack.jpg"
   },
   {
     "Navn": "Aurland stadion-friidrettsbane",
@@ -209,7 +209,7 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/brekkefossen.jpg"
   },
   {
     "Navn": "Flåm samfunnshus",
@@ -389,7 +389,7 @@ const anleggData = [
     "Drifter": "Aurland Ungdomshus",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/kino.jpg"
   },
   {
     "Navn": "Tusenårsstaden på Rygg - leikeplass",
@@ -463,7 +463,7 @@ const anleggData = [
     "Eier": NaN,
     "Drifter": NaN,
     "Planlagt": true,
-    "Kommentar": "Tenkt bygget ved sidenav volleyballbaner",
+    "Kommentar": "Tenkt bygget med volleyballbaner",
     "Bilde": ""
   },
   {
