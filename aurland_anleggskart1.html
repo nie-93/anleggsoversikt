@@ -190,6 +190,7 @@ function applyFilters() {
       if (map.hasLayer(m.marker)) map.removeLayer(m.marker);
     }
   });
+  if (radiusAktiv) visRadius();
 }
 
 filterKlasse.addEventListener('change', applyFilters);
@@ -236,13 +237,6 @@ function visRadius() {
 function skjulRadius() {
   radiusLag.forEach(s => map.removeLayer(s));
   radiusLag.length = 0;
-}
-
-// Oppdater radius når filter endrar seg
-const origApplyFilters = applyFilters;
-function applyFilters() {
-  origApplyFilters();
-  if (radiusAktiv) visRadius();
 }
 
 refreshAll();
