@@ -48,6 +48,8 @@
       <option value="nytt">Nytt (under 10 år)</option>
       <option value="modent">Modent (10-15 år)</option>
       <option value="rehab">Rehab-aktuelt (over 15 år)</option>
+      <option value="ukjent">Ukjent alder</option>
+      <option value="planlagt">Planlagt</option>
     </select>
   </span>
 </div>
@@ -57,8 +59,9 @@
 <div id="legend">
   <span><span class="dot" style="background:#0F6E56"></span>Nytt (under 10 år)</span>
   <span><span class="dot" style="background:#854F0B"></span>Modent (10-15 år)</span>
-  <span><span class="dot" style="background:#A32D2D"></span>Rehab-aktuelt (over 15 år / ukjent)</span>
-  <span><span class="dot" style="background:#534AB7"></span>Planlagt (ikkje bygd)</span>
+  <span><span class="dot" style="background:#A32D2D"></span>Rehab-aktuelt (over 15 år)</span>
+  <span><span class="dot" style="background:#888888"></span>Ukjent alder</span>
+  <span><span class="dot" style="background:#534AB7"></span>Planlagt</span>
 </div>
 
 <div id="export">
@@ -75,7 +78,7 @@ let currentData = anleggData;
 
 function alderStatus(byggear, ombyggingear) {
   const referanseaar = ombyggingear || byggear;
-  if (!referanseaar) return "rehab";
+  if (!referanseaar) return "ukjent";
   const age = currentYear - referanseaar;
   if (age < 10) return "nytt";
   if (age <= 15) return "modent";
@@ -86,7 +89,8 @@ function colorFor(status) {
   if (status === "planlagt") return "#534AB7";
   if (status === "nytt") return "#0F6E56";
   if (status === "modent") return "#854F0B";
-  return "#A32D2D";
+  if (status === "rehab") return "#A32D2D";
+  return "#888888";
 }
 
 const map = L.map('map').setView([60.89, 7.05], 10);
@@ -102,7 +106,19 @@ const flyfotoLag = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/serv
 });
 
 kartLag.addTo(map);
-L.control.layers({ "Kart": kartLag, "Flyfoto": flyfotoLag }).addTo(map);
+
+const reguleringsplanLag = L.tileLayer.wms('https://nap.ft.dibk.no/services/wms/reguleringsplaner/', {
+  layers: 'Reguleringsplan',
+  format: 'image/png',
+  transparent: true,
+  opacity: 0.6,
+  attribution: 'DiBK / Nasjonal arealplanbase'
+});
+
+L.control.layers(
+  { "Kart": kartLag, "Flyfoto": flyfotoLag },
+  { "Reguleringsplan (areal/formål)": reguleringsplanLag }
+).addTo(map);
 
 const markers = [];
 const filterKlasse = document.getElementById('filterKlasse');
