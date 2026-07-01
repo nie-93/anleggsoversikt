@@ -42,6 +42,7 @@
     <select id="filterKlasse"></select>
   </span>
   <span>
+  <span>
     <label for="filterStatus">Rehabiliteringsstatus:</label>
     <select id="filterStatus">
       <option value="alle">Alle</option>
@@ -51,6 +52,12 @@
       <option value="ukjent">Ukjent alder</option>
       <option value="planlagt">Planlagt</option>
     </select>
+  </span>
+  <span>
+    <button id="radiusBtn" onclick="toggleRadius()" style="font-size:13px; padding:4px 10px; border:1px solid #ccc; border-radius:6px; background:#fff; cursor:pointer;">
+      Vis 500m-radius
+    </button>
+  </span>
   </span>
 </div>
 
@@ -187,6 +194,56 @@ function applyFilters() {
 
 filterKlasse.addEventListener('change', applyFilters);
 document.getElementById('filterStatus').addEventListener('change', applyFilters);
+
+// 500m-radius
+const radiusLag = [];
+let radiusAktiv = false;
+
+function toggleRadius() {
+  radiusAktiv = !radiusAktiv;
+  const btn = document.getElementById('radiusBtn');
+  if (radiusAktiv) {
+    btn.style.background = '#2F5233';
+    btn.style.color = '#fff';
+    btn.style.borderColor = '#2F5233';
+    visRadius();
+  } else {
+    btn.style.background = '#fff';
+    btn.style.color = '#000';
+    btn.style.borderColor = '#ccc';
+    skjulRadius();
+  }
+}
+
+function visRadius() {
+  skjulRadius();
+  markers.forEach(m => {
+    if (map.hasLayer(m.marker)) {
+      const ll = m.marker.getLatLng();
+      const sirkel = L.circle(ll, {
+        radius: 500,
+        color: '#2F5233',
+        fillColor: '#2F5233',
+        fillOpacity: 0.07,
+        weight: 1.5,
+        dashArray: '5,5'
+      }).addTo(map);
+      radiusLag.push(sirkel);
+    }
+  });
+}
+
+function skjulRadius() {
+  radiusLag.forEach(s => map.removeLayer(s));
+  radiusLag.length = 0;
+}
+
+// Oppdater radius når filter endrar seg
+const origApplyFilters = applyFilters;
+function applyFilters() {
+  origApplyFilters();
+  if (radiusAktiv) visRadius();
+}
 
 refreshAll();
 
