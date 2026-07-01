@@ -14,7 +14,7 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "https://upload,wikimedia,org/wikipedia/commons/3/3a/Aurland_kommune,png"
+    "Bilde": "bilder/abu.jpg"
   },
   {
     "Navn": "Aurland barne- og ungdomsskule aktivitetspark",
@@ -29,7 +29,7 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/abu.jpg"
   },
   {
     "Navn": "Aurland idretts og samfunnshus",
@@ -44,7 +44,7 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/AIS.jpg"
   },
   {
     "Navn": "Aurland idretts og samfunnshus - svømmehallen",
@@ -89,7 +89,7 @@ const anleggData = [
     "Drifter": "AURLAND IDRETTSLAG",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/idrett.jpg"
   },
   {
     "Navn": "Aurland stadion - kunstgras",
@@ -98,13 +98,13 @@ const anleggData = [
     "Anleggstype": "Fotballbane kunstgress",
     "Byggeår": 1985,
     "Siste ombyggingsår": 2025,
-    "Lengdegrad": 7.20043442273775,
-    "Breddegrad": 60.9025250519373,
+    "Lengdegrad": 7.19550766869761,
+    "Breddegrad": 60.9040243045871,
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/lopebane.jpg"
+    "Bilde": ""
   },
   {
     "Navn": "Aurland stadion Sykkelbane",
@@ -134,7 +134,7 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/lopebane.jpg"
   },
   {
     "Navn": "Aurlandsdalen turisthytte Østerbø gnr 24 bnr 21",
@@ -149,7 +149,7 @@ const anleggData = [
     "Drifter": "DEN NORSKE TURISTFORENING OSLO OG OMEGN",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/ostebo.jpg"
   },
   {
     "Navn": "Aurlandshallen, innandørs skytebane",
@@ -164,7 +164,7 @@ const anleggData = [
     "Drifter": "AURLAND SKYTTARLAG",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/lovi.jpg"
   },
   {
     "Navn": "Aurlandshallen, klatrevegg",
@@ -179,7 +179,7 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/klatrevegg.jpg"
   },
   {
     "Navn": "Ball og klatrevegg ABU",
@@ -224,7 +224,7 @@ const anleggData = [
     "Drifter": "Flåm Samfunnshus",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/flam_Samf.jpg"
   },
   {
     "Navn": "Flåm strandvolleyball",
@@ -239,7 +239,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "Fin standard",
-    "Bilde": ""
+    "Bilde": "bilder/volleyball.jpg"
   },
   {
     "Navn": "Kongshelleren",
@@ -254,7 +254,7 @@ const anleggData = [
     "Drifter": "AURLAND FJELLSTYRE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/kongshelleren.jpg"
   },
   {
     "Navn": "Leikvollen nærmiljøanlegg",
@@ -284,7 +284,7 @@ const anleggData = [
     "Drifter": "AURLAND SKYTTARLAG",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/lovi.jpg"
   },
   {
     "Navn": "Lovi skytebane, 100m og 300m",
@@ -299,7 +299,7 @@ const anleggData = [
     "Drifter": "AURLAND SKYTTARLAG",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/lovi.jpg"
   },
   {
     "Navn": "Lovi skytebane, skyttarhus",
@@ -314,7 +314,7 @@ const anleggData = [
     "Drifter": "AURLAND SKYTTARLAG",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/lovi.jpg"
   },
   {
     "Navn": "Rallarvegen - turveg",
@@ -449,11 +449,11 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/dagsturhytta.jpg"
   },
   {
     "Navn": "Paddlebane",
-    "Anleggsklasse": NaN,
+    "Anleggsklasse": "Nærmiljøanlegg",
     "Anleggskategori": NaN,
     "Anleggstype": NaN,
     "Byggeår": null,
