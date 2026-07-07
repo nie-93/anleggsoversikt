@@ -19,7 +19,7 @@ const anleggData = [
   {
     "Navn": "Aurland barne- og ungdomsskule aktivitetspark",
     "Anleggsklasse": "Nærmiljøanlegg",
-    "Anleggskategori": "Mindre utendørsanlegg",
+    "Anleggskategori": "Lekeanlegg",
     "Anleggstype": "Flerbruksområde (ute)",
     "Byggeår": 2019,
     "Siste ombyggingsår": 2023,
@@ -258,7 +258,7 @@ const anleggData = [
   },
   {
     "Navn": "Leikvollen nærmiljøanlegg",
-    "Anleggsklasse": "Nærmiljøanlegg",
+    "Anleggsklasse": "Lekeanlegg",
     "Anleggskategori": "Mindre utendørsanlegg",
     "Anleggstype": "Flerbruksområde (ute)",
     "Byggeår": 2016,
@@ -393,7 +393,7 @@ const anleggData = [
   },
   {
     "Navn": "Tusenårsstaden på Rygg - leikeplass",
-    "Anleggsklasse": "Nærmiljøanlegg",
+    "Anleggsklasse": "Lekeanlegg",
     "Anleggskategori": "Anlegg for ballaktivitet",
     "Anleggstype": "Liten balløkke/-bane",
     "Byggeår": 2006,
@@ -513,7 +513,7 @@ const anleggData = [
   },
   {
     "Navn": "Lekeanlegg TY",
-    "Anleggsklasse": "Nærmiljøanlegg",
+    "Anleggsklasse": "Lekeanlegg",
     "Anleggskategori": "Lekeanlegg",
     "Anleggstype": NaN,
     "Byggeår": null,
@@ -528,7 +528,7 @@ const anleggData = [
   },
   {
     "Navn": "Lekeanlegg Fiskhammar",
-    "Anleggsklasse": "Nærmiljøanlegg",
+    "Anleggsklasse": "Lekeanlegg",
     "Anleggskategori": "Lekeanlegg",
     "Anleggstype": NaN,
     "Byggeår": null,
@@ -558,7 +558,7 @@ const anleggData = [
   },
   {
     "Navn": "Lekeanlegg Ystebøen",
-    "Anleggsklasse": "Nærmiljøanlegg",
+    "Anleggsklasse": "Lekeanlegg",
     "Anleggskategori": "Lekeanlegg",
     "Anleggstype": NaN,
     "Byggeår": null,
@@ -588,7 +588,7 @@ const anleggData = [
   },
   {
     "Navn": "Lekeanlegg Flåm sentrum",
-    "Anleggsklasse": "Nærmiljøanlegg",
+    "Anleggsklasse": "Lekeanlegg",
     "Anleggskategori": "Lekeanlegg",
     "Anleggstype": NaN,
     "Byggeår": null,
@@ -603,7 +603,7 @@ const anleggData = [
   },
   {
     "Navn": "Lekeanlegg Flåm barnehage",
-    "Anleggsklasse": "Barnehage",
+    "Anleggsklasse": "Lekeanlegg",
     "Anleggskategori": "Lekeanlegg i tilknyttning barnehage",
     "Anleggstype": NaN,
     "Byggeår": null,
@@ -618,7 +618,7 @@ const anleggData = [
   },
   {
     "Navn": "Lekeanlegg",
-    "Anleggsklasse": "Barnehage",
+    "Anleggsklasse": "Lekeanlegg",
     "Anleggskategori": "Lekeanlegg i tilknyttning barnehage",
     "Anleggstype": NaN,
     "Byggeår": null,
@@ -633,7 +633,7 @@ const anleggData = [
   },
   {
     "Navn": "Lekeanlegg Gudvangen /v vikinglandsby",
-    "Anleggsklasse": "Nærmiljøanlegg",
+    "Anleggsklasse": "Lekeanlegg",
     "Anleggskategori": "Lekeanlegg",
     "Anleggstype": "Lekeplass",
     "Byggeår": null,
@@ -659,7 +659,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/gront_gudvangen.jpg"
+    "Bilde": ""
   },
   {
     "Navn": "Utendørs møtested Undredal",
@@ -675,5 +675,20 @@ const anleggData = [
     "Planlagt": false,
     "Kommentar": "Her står ei flott geit",
     "Bilde": "bilder/geit_undredal.jpg"
+  },
+  {
+    "Navn": "Fotballbane Gress",
+    "Anleggsklasse": "Nærmiljøanlegg",
+    "Anleggskategori": "Fotballanlegg",
+    "Anleggstype": "fotballbane gress",
+    "Byggeår": null,
+    "Siste ombyggingsår": null,
+    "Lengdegrad": 7.17228539150975,
+    "Breddegrad": 60.9012713079376,
+    "Eier": NaN,
+    "Drifter": NaN,
+    "Planlagt": false,
+    "Kommentar": "Flott areal for en lekeplass",
+    "Bilde": "bilder/gress.jpg"
   }
 ];

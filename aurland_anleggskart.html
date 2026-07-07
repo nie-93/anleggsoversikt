@@ -10,10 +10,10 @@
   #header { padding: 16px 20px 8px; }
   #header h1 { font-size: 18px; margin: 0 0 4px; font-weight: 600; }
   #header p { font-size: 13px; color: #666; margin: 0 0 12px; }
-  #controls { padding: 0 20px 12px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+  #controls { padding: 0 20px 12px; display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
   #controls label { font-size: 13px; color: #444; margin-right: 6px; }
-  #controls select, #controls input[type="number"] { font-size: 13px; padding: 4px 6px; border: 1px solid #ccc; border-radius: 6px; }
-  #map { width: 100%; height: 72vh; min-height: 480px; }
+  #controls select { font-size: 13px; padding: 4px 6px; border: 1px solid #ccc; border-radius: 6px; }
+  #map { width: 100%; height: 68vh; min-height: 480px; }
   #legend { padding: 10px 20px; display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px; color: #444; background: #fff; border-top: 1px solid #eee; }
   .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
   .popup-title { font-weight: 600; font-size: 13px; margin: 0 0 4px; }
@@ -25,15 +25,23 @@
   #export { padding: 10px 20px; background: #fff; border-top: 1px solid #eee; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
   #export button { font-size: 13px; padding: 6px 12px; border: 1px solid #ccc; border-radius: 6px; background: #fff; cursor: pointer; }
   #export button:hover { background: #f0f0f0; }
-  #importStatus { font-size: 12px; color: #777; }
   footer { padding: 10px 20px; font-size: 11px; color: #999; }
+
+  /* Radiuspanel */
+  #radiusPanel { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 10px 14px; font-size: 13px; min-width: 220px; }
+  #radiusPanel strong { display: block; margin-bottom: 8px; font-size: 13px; color: #333; }
+  .radius-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .radius-row input[type="checkbox"] { cursor: pointer; }
+  .radius-row input[type="number"] { width: 64px; padding: 2px 4px; font-size: 12px; border: 1px solid #ccc; border-radius: 4px; }
+  .radius-row span { flex: 1; font-size: 12px; color: #444; }
+  .radius-row label { font-size: 12px; color: #666; }
 </style>
 </head>
 <body>
 
 <div id="header">
   <h1>Anlegg for idrett, friluftsliv og nærmiljø - Aurland kommune</h1>
-  <p>Grunnlag for kommunedelplan for fysisk aktivitet, idrett og friluftsliv 2025-2036. Oppdater anlegg.js årleg etter eksport frå anleggsregisteret.no.</p>
+  <p>Grunnlag for kommunedelplan for fysisk aktivitet, idrett og friluftsliv 2025-2036.</p>
 </div>
 
 <div id="controls">
@@ -41,7 +49,6 @@
     <label for="filterKlasse">Anleggsklasse:</label>
     <select id="filterKlasse"></select>
   </span>
-  <span>
   <span>
     <label for="filterStatus">Rehabiliteringsstatus:</label>
     <select id="filterStatus">
@@ -53,23 +60,49 @@
       <option value="planlagt">Planlagt</option>
     </select>
   </span>
-  <span>
-    <button id="radiusBtn" onclick="toggleRadius()" style="font-size:13px; padding:4px 10px; border:1px solid #ccc; border-radius:6px; background:#fff; cursor:pointer;">
-      Vis 500m-radius
-    </button>
+  <span style="display:flex;align-items:center;gap:6px;">
+    <input type="checkbox" id="visAlder" onchange="toggleAlder()" style="cursor:pointer;">
+    <label for="visAlder" style="font-size:13px;color:#444;cursor:pointer;margin:0;">Vis rehabiliteringsstatus</label>
   </span>
-  </span>
+
+  <div id="radiusPanel">
+    <strong>Dekningsradius per anleggstype</strong>
+    <div class="radius-row">
+      <input type="checkbox" id="r_leik" onchange="oppdaterRadius()">
+      <span>Lekeanlegg</span>
+      <input type="number" id="m_leik" value="300" min="50" max="5000" step="50" onchange="oppdaterRadius()">
+      <label>m</label>
+    </div>
+    <div class="radius-row">
+      <input type="checkbox" id="r_naermiljo" onchange="oppdaterRadius()">
+      <span>Nærmiljøanlegg</span>
+      <input type="number" id="m_naermiljo" value="500" min="50" max="5000" step="50" onchange="oppdaterRadius()">
+      <label>m</label>
+    </div>
+    <div class="radius-row">
+      <input type="checkbox" id="r_ordinaert" onchange="oppdaterRadius()">
+      <span>Ordinært anlegg</span>
+      <input type="number" id="m_ordinaert" value="1000" min="50" max="5000" step="50" onchange="oppdaterRadius()">
+      <label>m</label>
+    </div>
+    <div class="radius-row">
+      <input type="checkbox" id="r_friluft" onchange="oppdaterRadius()">
+      <span>Friluftsanlegg</span>
+      <input type="number" id="m_friluft" value="2000" min="50" max="10000" step="100" onchange="oppdaterRadius()">
+      <label>m</label>
+    </div>
+    <div class="radius-row">
+      <input type="checkbox" id="r_planlagt" onchange="oppdaterRadius()">
+      <span>Planlagt</span>
+      <input type="number" id="m_planlagt" value="500" min="50" max="5000" step="50" onchange="oppdaterRadius()">
+      <label>m</label>
+    </div>
+  </div>
 </div>
 
 <div id="map"></div>
 
-<div id="legend">
-  <span><span class="dot" style="background:#0F6E56"></span>Nytt (under 10 år)</span>
-  <span><span class="dot" style="background:#854F0B"></span>Modent (10-15 år)</span>
-  <span><span class="dot" style="background:#A32D2D"></span>Rehab-aktuelt (over 15 år)</span>
-  <span><span class="dot" style="background:#888888"></span>Ukjent alder</span>
-  <span><span class="dot" style="background:#534AB7"></span>Planlagt</span>
-</div>
+<div id="legend"></div>
 
 <div id="export">
   <button onclick="exportCSV()">Last ned data som CSV</button>
@@ -82,6 +115,26 @@
 <script>
 const currentYear = new Date().getFullYear();
 let currentData = anleggData;
+let alderAktiv = false;
+
+function klasseNokkel(klasse) {
+  if (!klasse) return "planlagt";
+  const k = klasse.toLowerCase();
+  if (k.includes("leik") || k.includes("lek")) return "leik";
+  if (k.includes("nærmiljø")) return "naermiljo";
+  if (k.includes("ordinær") || k.includes("ordinaer")) return "ordinaert";
+  if (k.includes("friluft")) return "friluft";
+  return "planlagt";
+}
+
+// Farge etter anleggstype (grunnmodus)
+function typeColor(nokkel) {
+  if (nokkel === "leik")      return "#1A6FA8";
+  if (nokkel === "naermiljo") return "#2F8F5A";
+  if (nokkel === "ordinaert") return "#7B3FA0";
+  if (nokkel === "friluft")   return "#C47B1A";
+  return "#534AB7";
+}
 
 function alderStatus(byggear, ombyggingear) {
   const referanseaar = ombyggingear || byggear;
@@ -92,33 +145,39 @@ function alderStatus(byggear, ombyggingear) {
   return "rehab";
 }
 
-function colorFor(status) {
+function alderColor(status) {
   if (status === "planlagt") return "#534AB7";
-  if (status === "nytt") return "#0F6E56";
-  if (status === "modent") return "#854F0B";
-  if (status === "rehab") return "#A32D2D";
+  if (status === "nytt")     return "#0F6E56";
+  if (status === "modent")   return "#854F0B";
+  if (status === "rehab")    return "#A32D2D";
   return "#888888";
+}
+
+function getColor(m) {
+  return alderAktiv ? alderColor(m.status) : typeColor(m.nokkel);
+}
+
+function toggleAlder() {
+  alderAktiv = document.getElementById('visAlder').checked;
+  markers.forEach(m => {
+    const c = getColor(m);
+    m.marker.setStyle({ color: c, fillColor: c });
+  });
+  oppdaterLegend();
 }
 
 const map = L.map('map').setView([60.89, 7.05], 10);
 
 const kartLag = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap-bidragsytarar',
-  maxZoom: 19
+  attribution: '&copy; OpenStreetMap-bidragsytarar', maxZoom: 19
 });
-
 const flyfotoLag = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-  attribution: 'Esri, Maxar, Earthstar Geographics',
-  maxZoom: 19
+  attribution: 'Esri, Maxar, Earthstar Geographics', maxZoom: 19
 });
-
 kartLag.addTo(map);
 
 const reguleringsplanLag = L.tileLayer.wms('https://nap.ft.dibk.no/services/wms/reguleringsplaner/', {
-  layers: 'Reguleringsplan',
-  format: 'image/png',
-  transparent: true,
-  opacity: 0.6,
+  layers: 'Reguleringsplan', format: 'image/png', transparent: true, opacity: 0.6,
   attribution: 'DiBK / Nasjonal arealplanbase'
 });
 
@@ -129,6 +188,7 @@ L.control.layers(
 
 const markers = [];
 const filterKlasse = document.getElementById('filterKlasse');
+const radiusLag = [];
 
 function refreshAll() {
   const allKlasser = new Set();
@@ -148,32 +208,32 @@ function buildMarkers() {
     if (!lat || !lng) return;
     const planlagt = a.Planlagt === true || a.Planlagt === "TRUE" || a.Planlagt === "ja" || a.Planlagt === "Ja";
     const status = planlagt ? "planlagt" : alderStatus(parseInt(a["Byggeår"]) || null, parseInt(a["Siste ombyggingsår"]) || null);
+    const nokkel = planlagt ? "planlagt" : klasseNokkel(a.Anleggsklasse);
+
     const marker = L.circleMarker([lat, lng], {
-      radius: 8,
-      color: colorFor(status),
-      fillColor: colorFor(status),
-      fillOpacity: 0.85,
-      weight: 1.5
+      radius: 8, color: getColor({status, nokkel}), fillColor: getColor({status, nokkel}), fillOpacity: 0.85, weight: 1.5
     });
+
     const aarTekst = planlagt ? "Planlagt - ikkje bygd" :
       `Bygd: ${a["Byggeår"] || "ukjent"}${a["Siste ombyggingsår"] ? ", ombygd: " + a["Siste ombyggingsår"] : ""}`;
+
     marker.bindPopup(
       `<div class="popup-title">${a.Navn}</div>` +
       `<p class="popup-row">${a.Anleggskategori || ""}${a.Anleggstype ? " - " + a.Anleggstype : ""}</p>` +
       `<p class="popup-row">${aarTekst}</p>` +
       `<p class="popup-row">Eier: ${a.Eier || "ukjent"}</p>` +
-      (a.Kommentar ? `<p class="popup-row" style="margin-top:6px; font-style:italic;">${a.Kommentar}</p>` : "")
+      (a.Kommentar ? `<p class="popup-row" style="margin-top:6px;font-style:italic;">${a.Kommentar}</p>` : "")
     );
+
     if (a.Bilde) {
       marker.bindTooltip(
-        `<div class="hover-card">
-           <img src="${a.Bilde}" alt="${a.Navn}" onerror="this.parentElement.style.display='none'">
-           <p class="hover-title">${a.Navn}</p>
-         </div>`,
+        `<div class="hover-card"><img src="${a.Bilde}" alt="${a.Navn}" onerror="this.parentElement.style.display='none'"><p class="hover-title">${a.Navn}</p></div>`,
         { direction: "top", offset: [0, -10], opacity: 1, sticky: false }
       );
     }
-    markers.push({ marker, klasse: a.Anleggsklasse || "Planlagt", status, radius: a["Radius (m)"] || null });
+
+    markers.push({ marker, klasse: a.Anleggsklasse || "Planlagt", status, nokkel,
+      excelRadius: a["Radius (m)"] || null });
   });
   applyFilters();
 }
@@ -184,74 +244,70 @@ function applyFilters() {
   markers.forEach(m => {
     const visible = (klasseVal === "alle" || m.klasse === klasseVal) &&
                     (statusVal === "alle" || m.status === statusVal);
-    if (visible) {
-      if (!map.hasLayer(m.marker)) m.marker.addTo(map);
-    } else {
-      if (map.hasLayer(m.marker)) map.removeLayer(m.marker);
-    }
+    if (visible) { if (!map.hasLayer(m.marker)) m.marker.addTo(map); }
+    else { if (map.hasLayer(m.marker)) map.removeLayer(m.marker); }
   });
-  if (radiusAktiv) visRadius();
+  oppdaterRadius();
 }
 
 filterKlasse.addEventListener('change', applyFilters);
 document.getElementById('filterStatus').addEventListener('change', applyFilters);
 
-// 500m-radius
-const radiusLag = [];
-let radiusAktiv = false;
+function oppdaterRadius() {
+  radiusLag.forEach(s => map.removeLayer(s));
+  radiusLag.length = 0;
 
-function toggleRadius() {
-  radiusAktiv = !radiusAktiv;
-  const btn = document.getElementById('radiusBtn');
-  if (radiusAktiv) {
-    btn.style.background = '#2F5233';
-    btn.style.color = '#fff';
-    btn.style.borderColor = '#2F5233';
-    visRadius();
-  } else {
-    btn.style.background = '#fff';
-    btn.style.color = '#000';
-    btn.style.borderColor = '#ccc';
-    skjulRadius();
-  }
-}
+  const config = {
+    leik:       { aktiv: document.getElementById('r_leik').checked,       meter: parseInt(document.getElementById('m_leik').value) || 300 },
+    naermiljo:  { aktiv: document.getElementById('r_naermiljo').checked,  meter: parseInt(document.getElementById('m_naermiljo').value) || 500 },
+    ordinaert:  { aktiv: document.getElementById('r_ordinaert').checked,  meter: parseInt(document.getElementById('m_ordinaert').value) || 1000 },
+    friluft:    { aktiv: document.getElementById('r_friluft').checked,    meter: parseInt(document.getElementById('m_friluft').value) || 2000 },
+    planlagt:   { aktiv: document.getElementById('r_planlagt').checked,   meter: parseInt(document.getElementById('m_planlagt').value) || 500 },
+  };
 
-function visRadius() {
-  skjulRadius();
   markers.forEach(m => {
-    if (map.hasLayer(m.marker)) {
-      const ll = m.marker.getLatLng();
-      const r = m.radius || 500;
-      const sirkel = L.circle(ll, {
-        radius: r,
-        color: '#2F5233',
-        fillColor: '#2F5233',
-        fillOpacity: 0.07,
-        weight: 1.5,
-        dashArray: '5,5'
-      }).addTo(map);
-      radiusLag.push(sirkel);
-    }
+    if (!map.hasLayer(m.marker)) return;
+    const cfg = config[m.nokkel];
+    if (!cfg || !cfg.aktiv) return;
+    const r = m.excelRadius || cfg.meter;
+    const sirkel = L.circle(m.marker.getLatLng(), {
+      radius: r, color: '#2F5233', fillColor: '#2F5233',
+      fillOpacity: 0.07, weight: 1.5, dashArray: '5,5'
+    }).addTo(map);
+    radiusLag.push(sirkel);
   });
 }
 
-function skjulRadius() {
-  radiusLag.forEach(s => map.removeLayer(s));
-  radiusLag.length = 0;
+function oppdaterLegend() {
+  const el = document.getElementById('legend');
+  if (alderAktiv) {
+    el.innerHTML = `
+      <span><span class="dot" style="background:#0F6E56"></span>Nytt (under 10 år)</span>
+      <span><span class="dot" style="background:#854F0B"></span>Modent (10-15 år)</span>
+      <span><span class="dot" style="background:#A32D2D"></span>Rehab-aktuelt (over 15 år)</span>
+      <span><span class="dot" style="background:#888888"></span>Ukjent alder</span>
+      <span><span class="dot" style="background:#534AB7"></span>Planlagt</span>`;
+  } else {
+    el.innerHTML = `
+      <span><span class="dot" style="background:#1A6FA8"></span>Lekeanlegg</span>
+      <span><span class="dot" style="background:#2F8F5A"></span>Nærmiljøanlegg</span>
+      <span><span class="dot" style="background:#7B3FA0"></span>Ordinært anlegg</span>
+      <span><span class="dot" style="background:#C47B1A"></span>Friluftsanlegg</span>
+      <span><span class="dot" style="background:#534AB7"></span>Planlagt</span>`;
+  }
 }
 
 refreshAll();
+oppdaterLegend();
 
 function exportCSV() {
-  const headers = ["Navn","Anleggsklasse","Anleggskategori","Anleggstype","Byggeår","Siste ombyggingsår","Breddegrad","Lengdegrad","Eier","Drifter","Planlagt","Kommentar","Bilde"];
+  const headers = ["Navn","Anleggsklasse","Anleggskategori","Anleggstype","Byggeår","Siste ombyggingsår","Breddegrad","Lengdegrad","Eier","Drifter","Planlagt","Kommentar","Bilde","Radius (m)"];
   const rows = currentData.map(a => headers.map(h => `"${(a[h] ?? "").toString().replace(/"/g,'""')}"`).join(","));
   const csv = [headers.join(","), ...rows].join("\n");
   const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
-  a.href = url;
-  a.download = "anleggsdata_aurland.csv";
-  a.click();
+  a.href = url; a.download = "anleggsdata_aurland.csv"; a.click();
   URL.revokeObjectURL(url);
 }
 </script>
