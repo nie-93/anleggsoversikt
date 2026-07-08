@@ -705,5 +705,20 @@ const anleggData = [
     "Planlagt": false,
     "Kommentar": "Enkelt dissestativ. Behov for en oppgradering",
     "Bilde": ""
+  },
+  {
+    "Navn": "Lekeanlegg Flåm skole",
+    "Anleggsklasse": NaN,
+    "Anleggskategori": NaN,
+    "Anleggstype": NaN,
+    "Byggeår": null,
+    "Siste ombyggingsår": null,
+    "Lengdegrad": 7.1185955583453,
+    "Breddegrad": 60.8429557422547,
+    "Eier": "Aurland kommune",
+    "Drifter": NaN,
+    "Planlagt": false,
+    "Kommentar": "",
+    "Bilde": ""
   }
 ];
