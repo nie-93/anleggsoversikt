@@ -482,7 +482,7 @@ const anleggData = [
     "Bilde": ""
   },
   {
-    "Navn": "Badelaguna",
+    "Navn": "Badelaguna, UU rampe",
     "Anleggsklasse": "Utendørsanlegg",
     "Anleggskategori": "Badaplass",
     "Anleggstype": NaN,
