@@ -29,7 +29,7 @@ const anleggData = [
     "Drifter": "AURLAND KOMMUNE",
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": "bilder/abu.jpg"
+    "Bilde": ""
   },
   {
     "Navn": "Aurland idretts og samfunnshus",
