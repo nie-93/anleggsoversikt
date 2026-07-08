@@ -482,7 +482,7 @@ const anleggData = [
     "Bilde": ""
   },
   {
-    "Navn": "Badelaguna, UU rampe",
+    "Navn": "Badelaguna",
     "Anleggsklasse": "Utendørsanlegg",
     "Anleggskategori": "Badaplass",
     "Anleggstype": NaN,
@@ -493,7 +493,7 @@ const anleggData = [
     "Eier": NaN,
     "Drifter": NaN,
     "Planlagt": false,
-    "Kommentar": "",
+    "Kommentar": "Her kan med fordel bygges en UU rampe",
     "Bilde": "bilder/badelagune.jpg"
   },
   {
@@ -690,5 +690,20 @@ const anleggData = [
     "Planlagt": false,
     "Kommentar": "Flott areal for en lekeplass",
     "Bilde": "bilder/gress.jpg"
+  },
+  {
+    "Navn": "Dissestativ",
+    "Anleggsklasse": "Lekeanlegg",
+    "Anleggskategori": NaN,
+    "Anleggstype": NaN,
+    "Byggeår": null,
+    "Siste ombyggingsår": null,
+    "Lengdegrad": 7.18572598153121,
+    "Breddegrad": 60.9062701158165,
+    "Eier": NaN,
+    "Drifter": NaN,
+    "Planlagt": false,
+    "Kommentar": "Enkelt dissestativ. Behov for en oppgradering",
+    "Bilde": ""
   }
 ];
