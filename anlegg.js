@@ -492,7 +492,7 @@ const anleggData = [
     "Breddegrad": 60.908932359805,
     "Eier": NaN,
     "Drifter": NaN,
-    "Planlagt": false,
+    "Planlagt": true,
     "Kommentar": "Her kan med fordel bygges en UU rampe",
     "Bilde": "bilder/badelagune.jpg"
   },
