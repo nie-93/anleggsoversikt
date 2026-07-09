@@ -708,7 +708,7 @@ const anleggData = [
   },
   {
     "Navn": "Lekeanlegg Flåm skole",
-    "Anleggsklasse": NaN,
+    "Anleggsklasse": "Lekeanlegg",
     "Anleggskategori": NaN,
     "Anleggstype": NaN,
     "Byggeår": null,
@@ -720,5 +720,20 @@ const anleggData = [
     "Planlagt": false,
     "Kommentar": "",
     "Bilde": ""
+  },
+  {
+    "Navn": "Park Lunden",
+    "Anleggsklasse": "Nærmiljøanlegg",
+    "Anleggskategori": "Park",
+    "Anleggstype": "Park",
+    "Byggeår": null,
+    "Siste ombyggingsår": null,
+    "Lengdegrad": 7.11243760280931,
+    "Breddegrad": 60.8518528510741,
+    "Eier": NaN,
+    "Drifter": NaN,
+    "Planlagt": false,
+    "Kommentar": "Enkel park. Benker og grønt areal + fredet bauta",
+    "Bilde": "bilder/park_Flam.jpg"
   }
 ];
