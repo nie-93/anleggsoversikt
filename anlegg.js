@@ -694,7 +694,7 @@ const anleggData = [
   {
     "Navn": "Dissestativ",
     "Anleggsklasse": "Lekeanlegg",
-    "Anleggskategori": NaN,
+    "Anleggskategori": "Lekeanlegg i tilknyttning Flåm skole",
     "Anleggstype": NaN,
     "Byggeår": null,
     "Siste ombyggingsår": null,
