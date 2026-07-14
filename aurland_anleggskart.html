@@ -27,6 +27,16 @@
   #export button:hover { background: #f0f0f0; }
   footer { padding: 10px 20px; font-size: 11px; color: #999; }
 
+  /* Typepanel */
+  #typePanel { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 10px 14px; font-size: 13px; min-width: 180px; }
+  #typePanel strong { display: block; margin-bottom: 8px; font-size: 13px; color: #333; }
+  .klasse-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .klasse-row input[type="checkbox"] { cursor: pointer; }
+  .klasse-row label { font-size: 12px; color: #444; cursor: pointer; margin: 0; }
+  .klasse-knapper { margin-top: 8px; display: flex; gap: 6px; }
+  .klasse-knapper button { font-size: 11px; padding: 3px 8px; border: 1px solid #ccc; border-radius: 4px; background: #fff; cursor: pointer; }
+  .klasse-knapper button:hover { background: #f0f0f0; }
+
   /* Radiuspanel */
   #radiusPanel { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 10px 14px; font-size: 13px; min-width: 220px; }
   #radiusPanel strong { display: block; margin-bottom: 8px; font-size: 13px; color: #333; }
@@ -46,10 +56,6 @@
 
 <div id="controls">
   <span>
-    <label for="filterKlasse">Anleggsklasse:</label>
-    <select id="filterKlasse"></select>
-  </span>
-  <span>
     <label for="filterStatus">Rehabiliteringsstatus:</label>
     <select id="filterStatus">
       <option value="alle">Alle</option>
@@ -64,6 +70,34 @@
     <input type="checkbox" id="visAlder" onchange="toggleAlder()" style="cursor:pointer;">
     <label for="visAlder" style="font-size:13px;color:#444;cursor:pointer;margin:0;">Vis rehabiliteringsstatus</label>
   </span>
+
+  <div id="typePanel">
+    <strong>Vis anleggstype</strong>
+    <div class="klasse-row">
+      <input type="checkbox" id="v_leik" checked onchange="applyFilters()">
+      <label for="v_leik">Lekeanlegg</label>
+    </div>
+    <div class="klasse-row">
+      <input type="checkbox" id="v_naermiljo" checked onchange="applyFilters()">
+      <label for="v_naermiljo">Nærmiljøanlegg</label>
+    </div>
+    <div class="klasse-row">
+      <input type="checkbox" id="v_ordinaert" checked onchange="applyFilters()">
+      <label for="v_ordinaert">Ordinært anlegg</label>
+    </div>
+    <div class="klasse-row">
+      <input type="checkbox" id="v_friluft" checked onchange="applyFilters()">
+      <label for="v_friluft">Friluftsanlegg</label>
+    </div>
+    <div class="klasse-row">
+      <input type="checkbox" id="v_planlagt" checked onchange="applyFilters()">
+      <label for="v_planlagt">Planlagt</label>
+    </div>
+    <div class="klasse-knapper">
+      <button type="button" onclick="settAlleVis(true)">Vis alle</button>
+      <button type="button" onclick="settAlleVis(false)">Skjul alle</button>
+    </div>
+  </div>
 
   <div id="radiusPanel">
     <strong>Dekningsradius per anleggstype</strong>
@@ -133,7 +167,7 @@ function typeColor(nokkel) {
   if (nokkel === "naermiljo") return "#2F8F5A";
   if (nokkel === "ordinaert") return "#7B3FA0";
   if (nokkel === "friluft")   return "#C47B1A";
-  return "#C0392B";
+  return "#534AB7";
 }
 
 function alderStatus(byggear, ombyggingear) {
@@ -146,7 +180,7 @@ function alderStatus(byggear, ombyggingear) {
 }
 
 function alderColor(status) {
-  if (status === "planlagt") return "#C0392B";
+  if (status === "planlagt") return "#534AB7";
   if (status === "nytt")     return "#0F6E56";
   if (status === "modent")   return "#854F0B";
   if (status === "rehab")    return "#A32D2D";
@@ -187,15 +221,21 @@ L.control.layers(
 ).addTo(map);
 
 const markers = [];
-const filterKlasse = document.getElementById('filterKlasse');
 const radiusLag = [];
 
 function refreshAll() {
-  const allKlasser = new Set();
-  currentData.forEach(a => allKlasser.add(a.Anleggsklasse || "Planlagt"));
-  filterKlasse.innerHTML = '<option value="alle">Alle</option>' +
-    Array.from(allKlasser).sort().map(k => `<option value="${k}">${k}</option>`).join('');
   buildMarkers();
+}
+
+function settAlleVis(verdi) {
+  ["v_leik","v_naermiljo","v_ordinaert","v_friluft","v_planlagt"].forEach(id =>
+    document.getElementById(id).checked = verdi);
+  applyFilters();
+}
+
+function visNokkel(nokkel) {
+  const el = document.getElementById('v_' + nokkel);
+  return el ? el.checked : true;
 }
 
 function buildMarkers() {
@@ -232,17 +272,16 @@ function buildMarkers() {
       );
     }
 
-    markers.push({ marker, klasse: a.Anleggsklasse || "Planlagt", status, nokkel,
-      excelRadius: a["Radius (m)"] || null });
+    markers.push({ marker, klasse: a.Anleggsklasse || "Planlagt", type: a.Anleggstype || "Utan type",
+      status, nokkel, excelRadius: a["Radius (m)"] || null });
   });
   applyFilters();
 }
 
 function applyFilters() {
-  const klasseVal = filterKlasse.value;
   const statusVal = document.getElementById('filterStatus').value;
   markers.forEach(m => {
-    const visible = (klasseVal === "alle" || m.klasse === klasseVal) &&
+    const visible = visNokkel(m.nokkel) &&
                     (statusVal === "alle" || m.status === statusVal);
     if (visible) { if (!map.hasLayer(m.marker)) m.marker.addTo(map); }
     else { if (map.hasLayer(m.marker)) map.removeLayer(m.marker); }
@@ -250,7 +289,6 @@ function applyFilters() {
   oppdaterRadius();
 }
 
-filterKlasse.addEventListener('change', applyFilters);
 document.getElementById('filterStatus').addEventListener('change', applyFilters);
 
 function oppdaterRadius() {

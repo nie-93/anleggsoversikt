@@ -83,8 +83,8 @@ const anleggData = [
     "Anleggstype": "Idrettshus",
     "Byggeår": 1985,
     "Siste ombyggingsår": null,
-    "Lengdegrad": 7.196858,
-    "Breddegrad": 60.904022,
+    "Lengdegrad": 7.19657341926558,
+    "Breddegrad": 60.9043598902674,
     "Eier": "AURLAND KOMMUNE",
     "Drifter": "AURLAND IDRETTSLAG",
     "Planlagt": false,
@@ -138,7 +138,7 @@ const anleggData = [
   },
   {
     "Navn": "Aurlandsdalen turisthytte Østerbø gnr 24 bnr 21",
-    "Anleggsklasse": "Ordinært anlegg",
+    "Anleggsklasse": "Friluftslivsanlegg",
     "Anleggskategori": "Friluftslivsanlegg",
     "Anleggstype": "Overnattingshytte",
     "Byggeår": null,
@@ -198,7 +198,7 @@ const anleggData = [
   },
   {
     "Navn": "Brekkefossen tursti",
-    "Anleggsklasse": "Ordinært anlegg",
+    "Anleggsklasse": "Friluftslivsanlegg",
     "Anleggskategori": "Friluftslivsanlegg",
     "Anleggstype": "Tursti",
     "Byggeår": 1947,
@@ -243,7 +243,7 @@ const anleggData = [
   },
   {
     "Navn": "Kongshelleren",
-    "Anleggsklasse": "Ordinært anlegg",
+    "Anleggsklasse": "Friluftslivsanlegg",
     "Anleggskategori": "Friluftslivsanlegg",
     "Anleggstype": "Overnattingshytte",
     "Byggeår": 1980,
@@ -258,7 +258,7 @@ const anleggData = [
   },
   {
     "Navn": "Leikvollen nærmiljøanlegg",
-    "Anleggsklasse": "Lekeanlegg",
+    "Anleggsklasse": "Nærmiljøanlegg",
     "Anleggskategori": "Mindre utendørsanlegg",
     "Anleggstype": "Flerbruksområde (ute)",
     "Byggeår": 2016,
@@ -318,7 +318,7 @@ const anleggData = [
   },
   {
     "Navn": "Rallarvegen - turveg",
-    "Anleggsklasse": "Ordinært anlegg",
+    "Anleggsklasse": "Friluftslivsanlegg",
     "Anleggskategori": "Friluftslivsanlegg",
     "Anleggstype": "Tursti",
     "Byggeår": 1947,
@@ -348,7 +348,7 @@ const anleggData = [
   },
   {
     "Navn": "Stemmerdalen turveg for rullestolbrukarar",
-    "Anleggsklasse": "Ordinært anlegg",
+    "Anleggsklasse": "Friluftslivsanlegg",
     "Anleggskategori": "Friluftslivsanlegg",
     "Anleggstype": "Turvei",
     "Byggeår": 2003,
@@ -363,7 +363,7 @@ const anleggData = [
   },
   {
     "Navn": "Stemmerdalen-Østerbø",
-    "Anleggsklasse": "Ordinært anlegg",
+    "Anleggsklasse": "Friluftslivsanlegg",
     "Anleggskategori": "Friluftslivsanlegg",
     "Anleggstype": "Tursti",
     "Byggeår": 1947,
@@ -393,8 +393,8 @@ const anleggData = [
   },
   {
     "Navn": "Tusenårsstaden på Rygg - leikeplass",
-    "Anleggsklasse": "Lekeanlegg",
-    "Anleggskategori": "Anlegg for ballaktivitet",
+    "Anleggsklasse": "Nærmiljøanlegg",
+    "Anleggskategori": "Lekeanlegg",
     "Anleggstype": "Liten balløkke/-bane",
     "Byggeår": 2006,
     "Siste ombyggingsår": 2006,
@@ -408,7 +408,7 @@ const anleggData = [
   },
   {
     "Navn": "Undredal sentrum - Stokko",
-    "Anleggsklasse": "Ordinært anlegg",
+    "Anleggsklasse": "Friluftslivsanlegg",
     "Anleggskategori": "Friluftslivsanlegg",
     "Anleggstype": "Tursti",
     "Byggeår": 2021,
@@ -438,7 +438,7 @@ const anleggData = [
   },
   {
     "Navn": "Vinjaåsen Dagsturhytte",
-    "Anleggsklasse": "Ordinært anlegg",
+    "Anleggsklasse": "Friluftslivsanlegg",
     "Anleggskategori": "Friluftslivsanlegg",
     "Anleggstype": "Dagsturhytte",
     "Byggeår": 2018,
@@ -468,7 +468,7 @@ const anleggData = [
   },
   {
     "Navn": "Tursti SJBS -> Turlielva",
-    "Anleggsklasse": "Friluftslivsanlegg",
+    "Anleggsklasse": "Nærmiljøanlegg",
     "Anleggskategori": "Grussti",
     "Anleggstype": NaN,
     "Byggeår": null,
@@ -677,7 +677,7 @@ const anleggData = [
     "Bilde": "bilder/geit_undredal.jpg"
   },
   {
-    "Navn": "Fotballbane Gress",
+    "Navn": "Nærmiljøanlegg",
     "Anleggsklasse": "Nærmiljøanlegg",
     "Anleggskategori": "Fotballanlegg",
     "Anleggstype": "fotballbane gress",
@@ -687,8 +687,8 @@ const anleggData = [
     "Breddegrad": 60.9012713079376,
     "Eier": NaN,
     "Drifter": NaN,
-    "Planlagt": false,
-    "Kommentar": "Flott areal for en lekeplass",
+    "Planlagt": true,
+    "Kommentar": "Lekeplass, bålplass, fotballmål",
     "Bilde": "bilder/gress.jpg"
   },
   {
@@ -709,7 +709,7 @@ const anleggData = [
   {
     "Navn": "Lekeanlegg Flåm skole",
     "Anleggsklasse": "Lekeanlegg",
-    "Anleggskategori": NaN,
+    "Anleggskategori": "Lekeanlegg",
     "Anleggstype": NaN,
     "Byggeår": null,
     "Siste ombyggingsår": null,
@@ -735,5 +735,35 @@ const anleggData = [
     "Planlagt": false,
     "Kommentar": "Enkel park. Benker og grønt areal + fredet bauta",
     "Bilde": "bilder/park_Flam.jpg"
+  },
+  {
+    "Navn": "Badekai",
+    "Anleggsklasse": "Nærmiljøanlegg",
+    "Anleggskategori": "Lekeanlegg i tilknyttning skole",
+    "Anleggstype": NaN,
+    "Byggeår": null,
+    "Siste ombyggingsår": null,
+    "Lengdegrad": 7.11672971846639,
+    "Breddegrad": 60.864686296761,
+    "Eier": NaN,
+    "Drifter": NaN,
+    "Planlagt": false,
+    "Kommentar": "",
+    "Bilde": ""
+  },
+  {
+    "Navn": "Lekeanlegg ABU",
+    "Anleggsklasse": "Lekeanlegg",
+    "Anleggskategori": "Lekeanlegg i tilknyttning skole",
+    "Anleggstype": NaN,
+    "Byggeår": null,
+    "Siste ombyggingsår": null,
+    "Lengdegrad": 7.19685071412431,
+    "Breddegrad": 60.9033164911873,
+    "Eier": "Aurland kommune",
+    "Drifter": NaN,
+    "Planlagt": false,
+    "Kommentar": "",
+    "Bilde": ""
   }
 ];
