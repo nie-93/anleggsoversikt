@@ -26,8 +26,6 @@
   #export button { font-size: 13px; padding: 6px 12px; border: 1px solid #ccc; border-radius: 6px; background: #fff; cursor: pointer; }
   #export button:hover { background: #f0f0f0; }
   footer { padding: 10px 20px; font-size: 11px; color: #999; }
-
-  /* Typepanel */
   #typePanel { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 10px 14px; font-size: 13px; min-width: 180px; }
   #typePanel strong { display: block; margin-bottom: 8px; font-size: 13px; color: #333; }
   .klasse-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
@@ -36,8 +34,6 @@
   .klasse-knapper { margin-top: 8px; display: flex; gap: 6px; }
   .klasse-knapper button { font-size: 11px; padding: 3px 8px; border: 1px solid #ccc; border-radius: 4px; background: #fff; cursor: pointer; }
   .klasse-knapper button:hover { background: #f0f0f0; }
-
-  /* Radiuspanel */
   #radiusPanel { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 10px 14px; font-size: 13px; min-width: 220px; }
   #radiusPanel strong { display: block; margin-bottom: 8px; font-size: 13px; color: #333; }
   .radius-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
@@ -51,7 +47,7 @@
 
 <div id="header">
   <h1>Anlegg for idrett, friluftsliv og nærmiljø - Aurland kommune</h1>
-  <p>Grunnlag for kommunedelplan for fysisk aktivitet, idrett og friluftsliv 2025-2036.</p>
+  <p>Grunnlag for kommunedelplan for fysisk aktivitet, idrett og friluftsliv 2027–2034.</p>
 </div>
 
 <div id="controls">
@@ -73,6 +69,10 @@
 
   <div id="typePanel">
     <strong>Vis anleggstype</strong>
+    <div class="klasse-row">
+      <input type="checkbox" id="v_benk" checked onchange="applyFilters()">
+      <label for="v_benk">Benk</label>
+    </div>
     <div class="klasse-row">
       <input type="checkbox" id="v_leik" checked onchange="applyFilters()">
       <label for="v_leik">Lekeanlegg</label>
@@ -101,6 +101,12 @@
 
   <div id="radiusPanel">
     <strong>Dekningsradius per anleggstype</strong>
+    <div class="radius-row">
+      <input type="checkbox" id="r_benk" onchange="oppdaterRadius()">
+      <span>Benk</span>
+      <input type="number" id="m_benk" value="200" min="50" max="1000" step="50" onchange="oppdaterRadius()">
+      <label>m</label>
+    </div>
     <div class="radius-row">
       <input type="checkbox" id="r_leik" onchange="oppdaterRadius()">
       <span>Lekeanlegg</span>
@@ -135,7 +141,6 @@
 </div>
 
 <div id="map"></div>
-
 <div id="legend"></div>
 
 <div id="export">
@@ -154,6 +159,7 @@ let alderAktiv = false;
 function klasseNokkel(klasse) {
   if (!klasse) return "planlagt";
   const k = klasse.toLowerCase();
+  if (k.includes("benk") || k.includes("kvile") || k === "benk") return "benk";
   if (k.includes("leik") || k.includes("lek")) return "leik";
   if (k.includes("nærmiljø")) return "naermiljo";
   if (k.includes("ordinær") || k.includes("ordinaer")) return "ordinaert";
@@ -161,26 +167,26 @@ function klasseNokkel(klasse) {
   return "planlagt";
 }
 
-// Farge etter anleggstype (grunnmodus)
 function typeColor(nokkel) {
+  if (nokkel === "benk")      return "#8B6914";
   if (nokkel === "leik")      return "#1A6FA8";
   if (nokkel === "naermiljo") return "#2F8F5A";
   if (nokkel === "ordinaert") return "#7B3FA0";
   if (nokkel === "friluft")   return "#C47B1A";
-  return "#534AB7";
+  return "#C0392B";
 }
 
 function alderStatus(byggear, ombyggingear) {
-  const referanseaar = ombyggingear || byggear;
-  if (!referanseaar) return "ukjent";
-  const age = currentYear - referanseaar;
+  const ref = ombyggingear || byggear;
+  if (!ref) return "ukjent";
+  const age = currentYear - ref;
   if (age < 10) return "nytt";
   if (age <= 15) return "modent";
   return "rehab";
 }
 
 function alderColor(status) {
-  if (status === "planlagt") return "#534AB7";
+  if (status === "planlagt") return "#C0392B";
   if (status === "nytt")     return "#0F6E56";
   if (status === "modent")   return "#854F0B";
   if (status === "rehab")    return "#A32D2D";
@@ -201,7 +207,6 @@ function toggleAlder() {
 }
 
 const map = L.map('map').setView([60.89, 7.05], 10);
-
 const kartLag = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap-bidragsytarar', maxZoom: 19
 });
@@ -214,7 +219,6 @@ const reguleringsplanLag = L.tileLayer.wms('https://nap.ft.dibk.no/services/wms/
   layers: 'Reguleringsplan', format: 'image/png', transparent: true, opacity: 0.6,
   attribution: 'DiBK / Nasjonal arealplanbase'
 });
-
 L.control.layers(
   { "Kart": kartLag, "Flyfoto": flyfotoLag },
   { "Reguleringsplan (areal/formål)": reguleringsplanLag }
@@ -223,13 +227,10 @@ L.control.layers(
 const markers = [];
 const radiusLag = [];
 
-function refreshAll() {
-  buildMarkers();
-}
+const ALLE_NOKKLAR = ["v_benk","v_leik","v_naermiljo","v_ordinaert","v_friluft","v_planlagt"];
 
 function settAlleVis(verdi) {
-  ["v_leik","v_naermiljo","v_ordinaert","v_friluft","v_planlagt"].forEach(id =>
-    document.getElementById(id).checked = verdi);
+  ALLE_NOKKLAR.forEach(id => document.getElementById(id).checked = verdi);
   applyFilters();
 }
 
@@ -272,8 +273,7 @@ function buildMarkers() {
       );
     }
 
-    markers.push({ marker, klasse: a.Anleggsklasse || "Planlagt", type: a.Anleggstype || "Utan type",
-      status, nokkel, excelRadius: a["Radius (m)"] || null });
+    markers.push({ marker, status, nokkel, excelRadius: a["Radius (m)"] || null });
   });
   applyFilters();
 }
@@ -281,8 +281,7 @@ function buildMarkers() {
 function applyFilters() {
   const statusVal = document.getElementById('filterStatus').value;
   markers.forEach(m => {
-    const visible = visNokkel(m.nokkel) &&
-                    (statusVal === "alle" || m.status === statusVal);
+    const visible = visNokkel(m.nokkel) && (statusVal === "alle" || m.status === statusVal);
     if (visible) { if (!map.hasLayer(m.marker)) m.marker.addTo(map); }
     else { if (map.hasLayer(m.marker)) map.removeLayer(m.marker); }
   });
@@ -296,11 +295,12 @@ function oppdaterRadius() {
   radiusLag.length = 0;
 
   const config = {
-    leik:       { aktiv: document.getElementById('r_leik').checked,       meter: parseInt(document.getElementById('m_leik').value) || 300 },
-    naermiljo:  { aktiv: document.getElementById('r_naermiljo').checked,  meter: parseInt(document.getElementById('m_naermiljo').value) || 500 },
-    ordinaert:  { aktiv: document.getElementById('r_ordinaert').checked,  meter: parseInt(document.getElementById('m_ordinaert').value) || 1000 },
-    friluft:    { aktiv: document.getElementById('r_friluft').checked,    meter: parseInt(document.getElementById('m_friluft').value) || 2000 },
-    planlagt:   { aktiv: document.getElementById('r_planlagt').checked,   meter: parseInt(document.getElementById('m_planlagt').value) || 500 },
+    benk:      { aktiv: document.getElementById('r_benk').checked,      meter: parseInt(document.getElementById('m_benk').value) || 200 },
+    leik:      { aktiv: document.getElementById('r_leik').checked,      meter: parseInt(document.getElementById('m_leik').value) || 300 },
+    naermiljo: { aktiv: document.getElementById('r_naermiljo').checked, meter: parseInt(document.getElementById('m_naermiljo').value) || 500 },
+    ordinaert: { aktiv: document.getElementById('r_ordinaert').checked, meter: parseInt(document.getElementById('m_ordinaert').value) || 1000 },
+    friluft:   { aktiv: document.getElementById('r_friluft').checked,   meter: parseInt(document.getElementById('m_friluft').value) || 2000 },
+    planlagt:  { aktiv: document.getElementById('r_planlagt').checked,  meter: parseInt(document.getElementById('m_planlagt').value) || 500 },
   };
 
   markers.forEach(m => {
@@ -324,18 +324,19 @@ function oppdaterLegend() {
       <span><span class="dot" style="background:#854F0B"></span>Modent (10-15 år)</span>
       <span><span class="dot" style="background:#A32D2D"></span>Rehab-aktuelt (over 15 år)</span>
       <span><span class="dot" style="background:#888888"></span>Ukjent alder</span>
-      <span><span class="dot" style="background:#534AB7"></span>Planlagt</span>`;
+      <span><span class="dot" style="background:#C0392B"></span>Planlagt</span>`;
   } else {
     el.innerHTML = `
+      <span><span class="dot" style="background:#8B6914"></span>Benk</span>
       <span><span class="dot" style="background:#1A6FA8"></span>Lekeanlegg</span>
       <span><span class="dot" style="background:#2F8F5A"></span>Nærmiljøanlegg</span>
       <span><span class="dot" style="background:#7B3FA0"></span>Ordinært anlegg</span>
       <span><span class="dot" style="background:#C47B1A"></span>Friluftsanlegg</span>
-      <span><span class="dot" style="background:#534AB7"></span>Planlagt</span>`;
+      <span><span class="dot" style="background:#C0392B"></span>Planlagt</span>`;
   }
 }
 
-refreshAll();
+buildMarkers();
 oppdaterLegend();
 
 function exportCSV() {
