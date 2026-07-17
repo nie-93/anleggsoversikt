@@ -779,7 +779,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b1.jpg"
   },
   {
     "Navn": "b2",
@@ -794,7 +794,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b2.jpg"
   },
   {
     "Navn": "b3",
@@ -809,7 +809,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b3.jpg"
   },
   {
     "Navn": "b4",
@@ -824,7 +824,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b4.jpg"
   },
   {
     "Navn": "b5",
@@ -839,7 +839,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b5.jpg"
   },
   {
     "Navn": "b6",
@@ -854,7 +854,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b6.jpg"
   },
   {
     "Navn": "b7",
@@ -869,7 +869,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b7.jpg"
   },
   {
     "Navn": "b8",
@@ -884,7 +884,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b8.jpg"
   },
   {
     "Navn": "b9",
@@ -899,7 +899,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b9.jpg"
   },
   {
     "Navn": "b10",
@@ -929,7 +929,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b11.jpg"
   },
   {
     "Navn": "b12",
@@ -944,7 +944,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b12.jpg"
   },
   {
     "Navn": "b13",
@@ -974,7 +974,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b14.jpg"
   },
   {
     "Navn": "b15",
@@ -989,7 +989,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b15.jpg"
   },
   {
     "Navn": "b16",
@@ -1004,7 +1004,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b16.jpg"
   },
   {
     "Navn": "b17",
@@ -1034,7 +1034,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b18.jpg"
   },
   {
     "Navn": "b19",
@@ -1049,7 +1049,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b19.jpg"
   },
   {
     "Navn": "b20",
@@ -1079,7 +1079,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b21.jpg"
   },
   {
     "Navn": "b22",
@@ -1094,7 +1094,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b22.jpg"
   },
   {
     "Navn": "b23",
@@ -1109,7 +1109,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b23.jpg"
   },
   {
     "Navn": "b24",
@@ -1124,7 +1124,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b24.jpg"
   },
   {
     "Navn": "b25",
@@ -1199,7 +1199,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b29.jpg"
   },
   {
     "Navn": "b30",
@@ -1229,7 +1229,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b31.jpg"
   },
   {
     "Navn": "b32",
@@ -1244,7 +1244,7 @@ const anleggData = [
     "Drifter": NaN,
     "Planlagt": false,
     "Kommentar": "",
-    "Bilde": ""
+    "Bilde": "bilder/b32.jpg"
   },
   {
     "Navn": "b33",
